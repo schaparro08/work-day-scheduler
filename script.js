@@ -36,12 +36,31 @@ $(document).ready(function(){
         $(this).child(".hour").sibling("textarea").addClass("present");
 
        }
+       //call the function
+        colorUpdater();
+       // keep time updated
+        var interval = setInterval(colorUpdater,15000);
+       //need saved data from local storage
+        $("#hour-nine .information").val(localStorage.getItem("hour-nine"));
+        $("#hour-ten .information").val(localStorage.getItem("hour-ten"));
+        $("#hour-eleven .information").val(localStorage.getItem("hour-eleven"));
+        $("#hour-twelve .information").val(localStorage.getItem("hour-twelve"));
+        $("#hour-thirteen .information").val(localStorage.getItem("hour-thrteen"));
+        $("#hour-fourteen .information").val(localStorage.getItem("hour-fourteen"));
+        $("#hour-fifteen .information").val(localStorage.getItem("hour-fifteen"));
+        $("#hour-sixteen .information").val(localStorage.getItem("hour-sixteen"));
+        $("#hour-seventeen .information").val(localStorage.getItem("hour-seventeen"));
+
+
+        $("#currentDay").text(moment().format("MMM Do YYYY"));
+
+
     } 
 
-     )}
- //call the function
+     )};
+ 
     
-       colorUpdater();
+ 
 
 })
 
