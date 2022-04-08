@@ -23,16 +23,17 @@ $(document).ready(function(){
      // loop over the timebloacks
      $(".time-block").each(function() {
         //create something to loop over the time block
-        var blockTime = $(".hour")
+         var blockTime = $(this).children(".hour")[0];
+         console.log(blockTime);
        
         // conditional statement to check the hurs and apply correct time 
 
        if (blockTime < currentHour) {
-           $("textarea").addclass("past");
+           $(this).child(".hour").sibling("textarea").addClass("past");
        } else if (blockTime > currentHour) {
-           $("textarea").addclass("future");
+        $(this).child(".hour").sibling("textarea").addClass("future");
        } else {
-           $("textarea").addclass("present")
+        $(this).child(".hour").sibling("textarea").addClass("present");
 
        }
     } 
