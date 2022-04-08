@@ -23,9 +23,9 @@ $(document).ready(function(){
     $(".time-block").each(function() {
        //create something to loop over the time block
 
-        var blockTime = parseInt($(this).attr("id").split("-")[1]);
+        var blockTime = parseInt($(this).attr("name"));
         // $(this).children(".hour")[0];
-        // console.log(blockTime);
+        console.log(blockTime);
       
        // conditional statement to check the hurs and apply correct time (color)
 
