@@ -17,26 +17,7 @@ $(document).ready(function(){
         var time = $(this).parent().attr("id");
         localStorage.setItem(time, value);
     })
-     // function to update the current hour and chage the colors of the time blocks
-     function colorUpdater () {
-     // create a variable that holds the current time value
-        var currentHour = moment().hours();
-        console.log(currentHour);
-     // loop over the timebloacks
-     $(".time-block").each(function() {
-        //create something to loop over the time block
-         var blockTime = $(this).children(".hour")[0];
-         console.log(blockTime);
-       
-        // conditional statement to check the hurs and apply correct time 
-       if (blockTime < currentHour) {
-           $(this).children(".hour").sibling("textarea").addClass("past");
-       } else if (blockTime > currentHour) {
-        $(this).children(".hour").sibling("textarea").addClass("future");
-       } else {
-        $(this).children(".hour").sibling("textarea").addClass("present");
-
-       }
+    
        //call the function
         colorUpdater();
        // keep time updated
@@ -56,9 +37,9 @@ $(document).ready(function(){
         $("#currentDay").text(moment().format("MMM Do YYYY"));
 
 
-    } 
+    
 
-     )}
+    
 
 
 
@@ -66,3 +47,29 @@ $(document).ready(function(){
 })
 
 
+ // function to update the current hour and chage the colors of the time blocks
+ function colorUpdater () {
+    // create a variable that holds the current time value
+       var currentHour = moment().hours();
+       console.log(currentHour);
+    // loop over the timebloacks
+    $(".time-block").each(function() {
+       //create something to loop over the time block
+
+
+
+
+        var blockTime = $(this).children(".hour")[0];
+        console.log(blockTime);
+      
+       // conditional statement to check the hurs and apply correct time 
+      if (blockTime < currentHour) {
+          $(this).children(".hour").sibling("textarea").addClass("past");
+      } else if (blockTime > currentHour) {
+       $(this).children(".hour").sibling("textarea").addClass("future");
+      } else {
+       $(this).children(".hour").sibling("textarea").addClass("present");
+
+      }
+    })
+}
